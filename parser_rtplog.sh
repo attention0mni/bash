@@ -3,7 +3,7 @@ DATE=`date -d "1 hour ago" +%Y-%m-%d`
 DATE1=`date +%H:%M`
 DATE2=`date -d "1 hour ago" +%H:%M`
 HOUR=`date -d "1 hour ago" +%H`
-PSWD='elephant	'
+PSWD='pswd'
 
 sshpass -p $PSWD scp USERNAME@HOST:/usr/protei/MAK/logs/rtp.log /home/omni/Templates/Protei/
 t1=`cat /home/omni/Templates/Protei/rtp.log | awk '/[^'226-8']...;$/{print $0}' | awk '!/;0.0[0-3];/{print $0}' | grep $DATE  | grep $HOUR:[0-5].|wc -l`
